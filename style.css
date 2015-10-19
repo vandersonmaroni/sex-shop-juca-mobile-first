@@ -11,6 +11,8 @@
   background-color: #C2185B;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  z-index: 9;
 }
 
 .logo {
@@ -31,15 +33,15 @@
   display: block;
 }
 
-.separacao {
+.separation {
   width: 100%;
-  display: none;
   height: 3.125em;
 }
 
 .nav {
   position: fixed;
   z-index: 9;
+  margin-top: 3.125em;
 }
 
 .container-body {
@@ -95,22 +97,89 @@
   margin: 5% auto 0;
 }
 
-.container-product {
+.container-product, .container-service {
   width: 100%;
   padding: 10px;
 }
 
-.title-product {
+.title-product, .title-service {
   width: 100%;
   background-color: #C2185B;
   color: #FFF;
   padding: 2% 3%;
 }
 
-.title-product h2 {
+.title-product h2, .title-service h2 {
   text-align: left;
   font-size: 1em;
 }
+
+.grid-products {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 100%;
+  background-color: #EEEEEE;
+  height: 50%;
+  box-shadow: 3px 1px 5px #777777;
+  margin-top: 15px;
+}
+
+.product img {
+  width: 90%;
+  border: 1px solid #C2185B;
+  margin: 3.5% 3.5%;
+}
+
+.product h3 {
+  color: #526CFE;
+  font-size: 1em;
+  padding-left: 3.5%;
+  font-weight: normal;
+}
+
+.product p {
+  font-size: 0.8em;
+  padding: 3.5%
+}
+
+.separation-container {
+  border: 1px solid #526CFE;
+  margin: 15px 10px;
+}
+
+/* @media (min-width: 31.25em) { 500px
+
+  .product {
+    width: 100%;
+    height: 50%;
+    position: relative;
+  }
+
+  .product img {
+    width: 40%;
+    border: 1px solid #C2185B;
+    margin: 3.5% 3.5%;
+  }
+
+  .product h3 {
+
+    font-size: 1em;
+    padding-left: 3.5%;
+    font-weight: normal;
+  }
+
+  .product p {
+    font-size: 0.8em;
+    padding: 3.5%
+  }
+
+} */
 
 @media (max-width: 35.625em) { /*570px*/
 
@@ -138,13 +207,38 @@
     font-size: 0.8em;
   }
 
-  .container-product {
+  .container-product, .container-service {
     margin-top: -3px;
   }
 
 }
 
-@media (min-width: 40.625em) { /*650*/
+@media (min-width: 38.25em) { /*612px*/
+
+  .product {
+    width: 49%;
+    background-color: #EEEEEE;
+    height: 350px;
+    box-shadow: 3px 1px 5px #777777;
+    margin-top: 10px;
+  }
+
+  .product img {
+    width: 93%;
+    border: 1px solid #C2185B;
+    margin: 3.5% 3.5%;
+  }
+
+  .product h3 {
+    color: #526CFE;
+    font-size: 1em;
+    padding-left: 3.5%;
+    font-weight: normal;
+  }
+
+}
+
+@media (min-width: 40.625em) { /*650px*/
 
   .title-comment {
     font-size: 1em;
@@ -158,13 +252,13 @@
     font-size: 0.9em;
   }
 
-  .title-product h2 {
+  .title-product h2, .title-service h2 {
     font-size: 1.1em;
   }
 
 }
 
-@media (min-width: 45em) { /*720*/
+@media (min-width: 45em) { /*720px*/
 
   .title-comment {
     font-size: 1.1em;
@@ -251,6 +345,7 @@
     width: 100%;
     display: block !important;
     height: 4.125em;
+    margin-top: 0;
   }
 
   .nav ul {
@@ -302,18 +397,62 @@
     font-size: 0.7em;
   }
 
-  .container-product {
+  .container-product, .container-service {
     padding: 40px 40px;
   }
 
   .title-product {
     padding: 0.6% 1.5%;
-    width: 29%;
+    width: 36%;
   }
 
-  .title-product h2 {
+  .title-service {
+    padding: 0.6% 1.5%;
+    width: 40%;
+  }
+
+  .title-product h2, .title-service h2 {
     font-weight: normal;
     font-size: 1.3em;
+  }
+
+  .border-title {
+    border-bottom: 3px solid #C2185B;
+    width: 44%;
+    margin-top: -3px;
+  }
+
+  .border-title-service {
+    border-bottom: 3px solid #C2185B;
+    width: 46%;
+    margin-top: -3px;
+  }
+
+  .product {
+    /*width: 49%;
+    height: 55%;*/
+    width: 32%;
+    height: 333px;
+    margin-top: 40px;
+  }
+
+  .product img {
+    width: 95%;
+    margin: 2.5% 2.5%;
+  }
+
+  .product h3 {
+    font-size: 1.3em;
+    padding-left: 2.5%;
+  }
+
+  .product p {
+    padding-left: 2.5%;
+    font-size: 0.9em;
+  }
+
+  .separation-container {
+    margin: 15px 40px;
   }
 
 }
@@ -322,6 +461,22 @@
 
   .nav li a {
     font-size: 0.9em;
+  }
+
+  .title-product {
+    width: 34%;
+  }
+
+  .border-title {
+    width: 42%;
+  }
+
+  .title-service {
+    width: 36%;
+  }
+
+  .border-title-service {
+    width: 44%;
   }
 
 }
@@ -344,8 +499,16 @@
     font-size: 0.8em;
   }
 
-  .title-product h2 {
+  .title-product h2, .title-product h2 {
     font-size: 1.4em;
+  }
+
+  .product h3 {
+    font-size: 1.4em;
+  }
+
+  .product p {
+    font-size: 0.9em;
   }
 
 }
@@ -393,8 +556,41 @@
     font-size: 0.9em;
   }
 
-  .title-product h2 {
+  .title-product h2, .title-service h2 {
     font-size: 1.5em;
+  }
+
+  .product {
+    width: 31%;
+    height: 55%;
+  }
+
+  .product h3 {
+    font-size: 1.5em;
+  }
+
+  .product p {
+    font-size: 1em;
+  }
+
+}
+
+@media (min-width: 67.5em) { /*1080px*/
+
+  .title-product {
+    width: 32%;
+  }
+
+  .border-title {
+    width: 40%;
+  }
+
+  .title-service {
+    width: 34%;
+  }
+
+  .border-title-service {
+    width: 42%;
   }
 
 }
@@ -413,8 +609,32 @@
     font-size: 1em;
   }
 
-  .title-product h2 {
+  .title-product h2, .title-service h2 {
     font-size: 1.6em;
+  }
+
+  .title-product {
+    width: 32%;
+  }
+
+  .border-title {
+    width: 40%;
+  }
+
+  .title-service {
+    width: 34%;
+  }
+
+  .border-title-service {
+    width: 42%;
+  }
+
+  .product h3 {
+    font-size: 1.6em;
+  }
+
+  .product p {
+    font-size: 1.1em;
   }
 
 }
@@ -442,6 +662,22 @@
     font-size: 0.9em;
   }
 
+  .title-product {
+    width: 30%;
+  }
+
+  .border-title {
+    width: 38%;
+  }
+
+  .title-service {
+    width: 32%;
+  }
+
+  .border-title-service {
+    width: 40%;
+  }
+
 }
 
 @media (min-width: 79.375em) { /*1270px*/
@@ -458,8 +694,16 @@
     font-size: 1em;
   }
 
-  .title-product h2 {
+  .title-product h2, .title-service h2 {
     font-size: 1.7em;
+  }
+
+  .product h3 {
+    font-size: 1.7em;
+  }
+
+  .product p {
+    font-size: 1.1em;
   }
 
 }
@@ -507,8 +751,24 @@
     font-size: 1.125em;
   }
 
-  .title-product h2 {
+  .title-product h2, .title-service h2 {
     font-size: 1.8em;
+  }
+
+  .title-product {
+    width: 29%;
+  }
+
+  .border-title {
+    width: 35%;
+  }
+
+  .product h3 {
+    font-size: 1.8em;
+  }
+
+  .product p {
+    font-size: 1.1em;
   }
 
 }
